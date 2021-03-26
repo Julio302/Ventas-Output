@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JFernandezEcommerce2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdArea" Type="Int32" />
+    <NavigationProperty Name="Productoes" Relationship="JFernandezEcommerce2Model.FK__Producto__IdDepa__173876EA" FromRole="Departamento" ToRole="Producto" />
+  </EntityType>
+  <EntityContainer Name="JFernandezEcommerce2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departamentoes" EntityType="Self.Departamento" />
+    <EntitySet Name="Productoes" EntityType="JFernandezEcommerce2Model.Producto" />
+    <AssociationSet Name="FK__Producto__IdDepa__173876EA" Association="JFernandezEcommerce2Model.FK__Producto__IdDepa__173876EA">
+      <End Role="Departamento" EntitySet="Departamentoes" />
+      <End Role="Producto" EntitySet="Productoes" />
+    </AssociationSet>
+    <FunctionImport Name="AddSP">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+      <Parameter Name="Imagen" Mode="In" Type="String" />
+      <Parameter Name="Stock" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSP">
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSP" ReturnType="Collection(JFernandezEcommerce2Model.GetSP_Result)" />
+    <FunctionImport Name="UpdateSP">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+      <Parameter Name="IdProveedor" Mode="In" Type="Int32" />
+      <Parameter Name="Imagen" Mode="In" Type="String" />
+      <Parameter Name="Stock" Mode="In" Type="Int32" />
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Ventas" EntityType="JFernandezEcommerce2Model.Venta" />
+    <FunctionImport Name="AddDepartamento">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="IdArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDepartamento">
+      <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllDepartamento" ReturnType="Collection(JFernandezEcommerce2Model.GetAllDepartamento_Result)" />
+    <FunctionImport Name="UpdateDepartamento">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="IdArea" Mode="In" Type="Int32" />
+      <Parameter Name="IdDepartamento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteVenta">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllVenta" ReturnType="Collection(JFernandezEcommerce2Model.GetAllVenta_Result)" />
+    <FunctionImport Name="UpdateVenta">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="Total" Mode="In" Type="Double" />
+      <Parameter Name="IdMetodoPago" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddVenta">
+      <Parameter Name="IdVenta" Mode="InOut" Type="Int32" />
+      <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+      <Parameter Name="Total" Mode="In" Type="Double" />
+      <Parameter Name="IdMetodoPago" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="VentaProductoes" EntityType="JFernandezEcommerce2Model.VentaProducto" />
+    <AssociationSet Name="FK__VentaProd__IdPro__45F365D3" Association="JFernandezEcommerce2Model.FK__VentaProd__IdPro__45F365D3">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="VentaProducto" EntitySet="VentaProductoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VentaProd__IdVen__440B1D61" Association="JFernandezEcommerce2Model.FK__VentaProd__IdVen__440B1D61">
+      <End Role="Venta" EntitySet="Ventas" />
+      <End Role="VentaProducto" EntitySet="VentaProductoes" />
+    </AssociationSet>
+    <FunctionImport Name="AddVentaProducto">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+      <Parameter Name="IdProductoSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllVentaProducto" ReturnType="Collection(JFernandezEcommerce2Model.GetAllVentaProducto_Result)" />
+    <FunctionImport Name="DeleteVentaProducto">
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateVentaProducto">
+      <Parameter Name="IdVentaProducto" Mode="In" Type="Int32" />
+      <Parameter Name="IdVenta" Mode="In" Type="Int32" />
+      <Parameter Name="IdProductoSucursal" Mode="In" Type="Int32" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="IdProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="DepartamentoGetAll_Result">
+    <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdArea" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdDepartamento" Type="Int32" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="Imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stock" Type="Int32" />
+    <NavigationProperty Name="Departamento" Relationship="JFernandezEcommerce2Model.FK__Producto__IdDepa__173876EA" FromRole="Producto" ToRole="Departamento" />
+    <NavigationProperty Name="VentaProductoes" Relationship="JFernandezEcommerce2Model.FK__VentaProd__IdPro__45F365D3" FromRole="Producto" ToRole="VentaProducto" />
+  </EntityType>
+  <Association Name="FK__Producto__IdDepa__173876EA">
+    <End Type="JFernandezEcommerce2Model.Departamento" Role="Departamento" Multiplicity="0..1" />
+    <End Type="JFernandezEcommerce2Model.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="IdDepartamento" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="IdDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetSP_Result">
+    <Property Type="Int32" Name="IdProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Precio" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="IdDepartamento" Nullable="true" />
+    <Property Type="Int32" Name="IdProveedor" Nullable="true" />
+    <Property Type="String" Name="Imagen" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Stock" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="VentaGetAll_Result">
+    <Property Type="Int32" Name="IdVenta" Nullable="false" />
+    <Property Type="Int32" Name="IdCliente" Nullable="true" />
+    <Property Type="Double" Name="Total" Nullable="true" />
+    <Property Type="Int32" Name="IdMetodoPago" Nullable="true" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="IdVenta" />
+    </Key>
+    <Property Name="IdVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" />
+    <Property Name="Total" Type="Double" />
+    <Property Name="IdMetodoPago" Type="Int32" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="VentaProductoes" Relationship="JFernandezEcommerce2Model.FK__VentaProd__IdVen__440B1D61" FromRole="Venta" ToRole="VentaProducto" />
+  </EntityType>
+  <ComplexType Name="GetAllDepartamento_Result">
+    <Property Type="Int32" Name="IdDepartamento" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IdArea" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetAllVenta_Result">
+    <Property Type="Int32" Name="IdVenta" Nullable="false" />
+    <Property Type="Int32" Name="IdCliente" Nullable="true" />
+    <Property Type="Double" Name="Total" Nullable="true" />
+    <Property Type="Int32" Name="IdMetodoPago" Nullable="true" />
+    <Property Type="DateTime" Name="Fecha" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="VentaProducto">
+    <Key>
+      <PropertyRef Name="IdVentaProducto" />
+    </Key>
+    <Property Name="IdVentaProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdVenta" Type="Int32" />
+    <Property Name="IdProductoSucursal" Type="Int32" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="IdProducto" Type="Int32" />
+    <NavigationProperty Name="Producto" Relationship="JFernandezEcommerce2Model.FK__VentaProd__IdPro__45F365D3" FromRole="VentaProducto" ToRole="Producto" />
+    <NavigationProperty Name="Venta" Relationship="JFernandezEcommerce2Model.FK__VentaProd__IdVen__440B1D61" FromRole="VentaProducto" ToRole="Venta" />
+  </EntityType>
+  <Association Name="FK__VentaProd__IdPro__45F365D3">
+    <End Type="JFernandezEcommerce2Model.Producto" Role="Producto" Multiplicity="0..1" />
+    <End Type="JFernandezEcommerce2Model.VentaProducto" Role="VentaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="VentaProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VentaProd__IdVen__440B1D61">
+    <End Type="JFernandezEcommerce2Model.Venta" Role="Venta" Multiplicity="0..1" />
+    <End Type="JFernandezEcommerce2Model.VentaProducto" Role="VentaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="IdVenta" />
+      </Principal>
+      <Dependent Role="VentaProducto">
+        <PropertyRef Name="IdVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GetAllVentaProducto_Result">
+    <Property Type="Int32" Name="IdVentaProducto" Nullable="false" />
+    <Property Type="Int32" Name="IdVenta" Nullable="true" />
+    <Property Type="Int32" Name="IdProductoSucursal" Nullable="true" />
+    <Property Type="Int32" Name="Cantidad" Nullable="true" />
+    <Property Type="Int32" Name="IdProducto" Nullable="true" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,16 @@
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\BL.dll.config
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\BL.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\BL.pdb
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\DL.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\DL_EF.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\EntityFramework.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\ML.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\DL.pdb
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\DL_EF.pdb
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\ML.pdb
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\EntityFramework.xml
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\obj\Debug\BL.dll
+C:\Users\ALIEN10\Documents\FernandezGonzalezJulioAlberto\NuevosEjerc\Ecommerce2\BL\obj\Debug\BL.pdb
